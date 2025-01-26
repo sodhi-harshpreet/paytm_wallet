@@ -4,7 +4,6 @@ const cors = require('cors');
 const app = express();
 const mainRouter = require('./routes/index'); // Ensure this path is correct
 
-// console.log('mainRouter:', mainRouter); // Log what is being imported
 
 app.use(cors());
 app.use(express.json());
