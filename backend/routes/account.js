@@ -23,6 +23,11 @@ router.post("/transfer", authMiddleware, async (req, res) => {
             message: "Insufficient Balance"
         });
     }
+    if( amount<0){
+        return res.status(400).json({
+            message: "invalid input"
+        });
+    }
 
     const toAccount = await Account.findOne({ userId: to });
     if (!toAccount) {
